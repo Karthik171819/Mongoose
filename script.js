@@ -18,15 +18,21 @@ mongoose.connect("mongodb://localhost:27017/karthik")
 // })
 
 async function run() {
+
+try{
     const newuser = await User.create({
         name: "karthik",
         age: 21,
+        email:'Testing@gmail.com',
         hobbies: ['Sports','cricket'],
         address: {
             city: "Bengaluru"
         }
     });
     console.log(newuser);
-}
+    }catch(e) {
+        console.log(e.errors)
+    }
+} 
 
 run();
