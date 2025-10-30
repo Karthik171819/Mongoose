@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+
+
 //schema creation
 const  userSchema = new mongoose.Schema({
     name: String,
@@ -11,7 +13,7 @@ const  userSchema = new mongoose.Schema({
     hobbies: [String],
     address: {
         city: String,
-        street: string
+        street: String
     }
 });
 
