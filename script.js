@@ -20,16 +20,20 @@ mongoose.connect("mongodb://localhost:27017/karthik")
 async function run() {
 
 try{
-    const newuser = await User.create({
-        name: "karthik",
-        age: 21,
-        email:'Testing@gmail.com',
-        hobbies: ['Sports','cricket'],
-        address: {
-            city: "Bengaluru"
-        }
-    });
-    console.log(newuser);
+    //const user = await User.find().byName('karthik') //own method creation
+    const user = await User.findOne({name: 'karthik'});
+    user.sayHi()
+    // const newuser = await User.create({
+    //     name: "karthik",
+    //     age: 21,
+    //     email:'Testing@gmail.com',
+    //     hobbies: ['Sports','cricket'],
+    //     address: {
+    //         city: "Bengaluru"
+        // }
+    // });
+    // console.log(newuser);
+    console.log(user);
     }catch(e) {
         console.log(e.errors)
     }
